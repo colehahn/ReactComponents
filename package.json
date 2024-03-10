@@ -3,5 +3,23 @@
     "react": "^18.2.0",
     "react-icons": "^5.0.1",
     "styled-components": "^6.1.8"
-  }
+  },
+  "name": "reactcomponents",
+  "description": "`npm install git+https://github.com/colehahn/ReactComponents.git`",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/colehahn/ReactComponents.git"
+  },
+  "author": "colehahn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/colehahn/ReactComponents/issues"
+  },
+  "homepage": "https://github.com/colehahn/ReactComponents#readme"
 }
