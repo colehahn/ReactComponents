@@ -14,7 +14,7 @@
 .modal {
   opacity: 1;
   transition: opacity 100ms;
-  animation: fadeIn 1000ms;
+  animation: fadeIn 100ms;
 
   .overlay {
     position: fixed;
