@@ -3,7 +3,7 @@ import "./SlideIn.css";
 import "../common/overlay.css";
 import "../common/close-button.css";
 
-export const Modal: React.FC<{
+export const SlideIn: React.FC<{
   isOpen: boolean;
   closeSlideIn: (e: any) => void;
   children: React.JSX.Element[] | React.JSX.Element;
@@ -51,4 +51,4 @@ export const Modal: React.FC<{
   );
 };
 
-export default Modal;
+export default SlideIn;
