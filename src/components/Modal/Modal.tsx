@@ -4,7 +4,7 @@ import "./Modal.css";
 export const Modal: React.FC<{
   isOpen: boolean;
   closeModal: (e: any) => void;
-  children: React.JSX.Element[];
+  children: React.JSX.Element[] | React.JSX.Element;
 }> = (props) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
