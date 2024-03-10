@@ -110,7 +110,7 @@ export const CopyCode: React.FC<{
         </TitleWrapper>
       )}
       <AtRight>
-        <IconWrapper onClick={(e) => CopyToClipboard()}>
+        <IconWrapper onClick={(e: any) => CopyToClipboard()}>
           <StyledIcon />
         </IconWrapper>
         {copied && <CopiedLabel>copied to clipboard!</CopiedLabel>}

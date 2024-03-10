@@ -1,25 +1,42 @@
 {
+  "name": "reactcomponents",
+  "version": "0.1.0",
+  "private": true,
   "dependencies": {
     "react": "^18.2.0",
+    "react-dom": "^18.2.0",
     "react-icons": "^5.0.1",
+    "react-scripts": "5.0.1",
     "styled-components": "^6.1.8"
   },
-  "name": "reactcomponents",
-  "description": "`npm install git+https://github.com/colehahn/ReactComponents.git`",
-  "version": "1.0.0",
-  "main": "index.js",
-  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "git-update": "git fetch && git pull",
+    "start": "react-scripts start",
+    "build": "react-scripts build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/colehahn/ReactComponents.git"
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
   },
-  "author": "colehahn",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/colehahn/ReactComponents/issues"
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
-  "homepage": "https://github.com/colehahn/ReactComponents#readme"
+  "devDependencies": {
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.11.25",
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
+    "typescript": "^5.4.2"
+  }
 }
