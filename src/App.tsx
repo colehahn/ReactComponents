@@ -1,6 +1,10 @@
-import CopyCode from "./components/CopyCode";
+import React from "react";
+import CopyCode from "./components/CopyCode/CopyCode";
+import Modal from "./components/Modal/Modal";
 
 function App() {
+  const [modalOpen, setModalOpen] = React.useState(false);
+
   return (
     <div className="App">
       <p>
@@ -13,17 +17,19 @@ function App() {
       </p>
       <p>
         I will make all of these components display match the color scheme
-        provided by the following css custom properties:
+        provided by the css custom properties found in index.css.
       </p>
-      <ul>
-        <li>--primary</li>
-        <li>--secondary</li>
-        <li>--background</li>
-        <li>--transparent</li>
-        <li>...</li>
-      </ul>
+
       <h2>CopyCode:</h2>
       <CopyCode content="copy this code okay);" />
+
+      <h2>Modal:</h2>
+      <button onClick={(e) => setModalOpen(true)}>Open Modal</button>
+      <Modal isOpen={modalOpen} closeModal={(e) => setModalOpen(!modalOpen)}>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <CopyCode content={"hi"} />
+      </Modal>
     </div>
   );
 }

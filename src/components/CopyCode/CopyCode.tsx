@@ -1,6 +1,6 @@
 import React from "react";
 import { BiCopy } from "react-icons/bi";
-import "../styles/CopyCode.css";
+import "./CopyCode.css";
 
 export const CopyCode: React.FC<{
   content: any;
