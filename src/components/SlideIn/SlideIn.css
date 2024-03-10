@@ -1,0 +1,48 @@
+.slide-in.closed {
+  .overlay {
+    opacity: 0;
+  }
+  .slide-in-content {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: none;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.slide-in {
+  --duration: 0.1s;
+  .overlay {
+    animation: fadeIn var(--duration);
+    transition: opacity var(--duration);
+  }
+
+  .slide-in-content {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    min-width: 30vw;
+    background-color: var(--background);
+    transform: none;
+    transition: transform var(--duration);
+    animation: slideIn var(--duration);
+    padding: 1.5em;
+    border-left: 3px solid;
+  }
+}

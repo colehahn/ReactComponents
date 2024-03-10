@@ -1,9 +1,11 @@
 import React from "react";
 import CopyCode from "./components/CopyCode/CopyCode";
 import Modal from "./components/Modal/Modal";
+import SlideIn from "./components/SlideIn/SlideIn";
 
 function App() {
   const [modalOpen, setModalOpen] = React.useState(false);
+  const [slideInOpen, setslideInOpen] = React.useState(false);
 
   return (
     <div className="App">
@@ -30,6 +32,17 @@ function App() {
         <p>some modal content</p>
         <CopyCode content={"hi"} />
       </Modal>
+
+      <h2>SlideIn:</h2>
+      <button onClick={(e) => setslideInOpen(true)}>Open SlideIn</button>
+      <SlideIn
+        isOpen={slideInOpen}
+        closeSlideIn={(e) => setslideInOpen(!slideInOpen)}
+      >
+        <p>some slide content</p>
+        <p>some slide content</p>
+        <CopyCode content={"hi"} />
+      </SlideIn>
     </div>
   );
 }

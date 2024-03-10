@@ -1,44 +1,46 @@
 import React from "react";
-import "./Modal.css";
+import "./SlideIn.css";
 import "../common/overlay.css";
 import "../common/close-button.css";
 
 export const Modal: React.FC<{
   isOpen: boolean;
-  closeModal: (e: any) => void;
+  closeSlideIn: (e: any) => void;
   children: React.JSX.Element[] | React.JSX.Element;
 }> = (props) => {
   const ref = React.useRef<HTMLDivElement>(null);
 
-  const fadeOut = (e: any) => {
+  const slideOut = (e: any) => {
     ref.current?.classList.add("closed");
-    // hackey: we need this timeout duration to be the same as the opacity fadeout
+    // hackey: we need this timeout duration to be the same as the animation duration
     const seconds = Number.parseFloat(
-      window
-        .getComputedStyle(ref.current!)
-        .getPropertyValue("animation-duration")
+      window.getComputedStyle(ref.current!).getPropertyValue("--duration")
     );
-    setTimeout(() => props.closeModal(e), seconds * 1000);
+    console.log(seconds);
+    setTimeout(() => props.closeSlideIn(e), seconds * 1000);
   };
 
   return (
     props.isOpen && (
-      <div className="modal" ref={ref}>
+      <div className="slide-in" ref={ref}>
         <div
           className="overlay"
           onClick={(e) => {
             if (
               //hackey: only close if fully opened
               window
-                .getComputedStyle(ref.current!)
+                .getComputedStyle(e.target as Element)
                 .getPropertyValue("opacity") === "1"
             ) {
-              fadeOut(e);
+              slideOut(e);
             }
           }}
         >
-          <div className="modal-popup" onClick={(e) => e.stopPropagation()}>
-            <div className="close-button" onClick={(e) => fadeOut(e)}>
+          <div
+            className="slide-in-content"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="close-button" onClick={(e) => slideOut(e)}>
               ✖
             </div>
             {props.children}
