@@ -28,8 +28,19 @@ function App() {
       <h2>Modal:</h2>
       <button onClick={(e) => setModalOpen(true)}>Open Modal</button>
       <Modal isOpen={modalOpen} closeModal={(e) => setModalOpen(!modalOpen)}>
+        <p>heelloo</p>
         <p>some modal content</p>
         <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>some modal content</p>
+        <p>goodbye</p>
         <CopyCode content={"hi"} />
       </Modal>
 

@@ -38,10 +38,12 @@ export const Modal: React.FC<{
           }}
         >
           <div className="modal-popup" onClick={(e) => e.stopPropagation()}>
-            <div className="close-button" onClick={(e) => fadeOut(e)}>
-              ✖
+            <div className="content">
+              <div className="close-button" onClick={(e) => fadeOut(e)}>
+                ✖
+              </div>
+              {props.children}
             </div>
-            {props.children}
           </div>
         </div>
       </div>
